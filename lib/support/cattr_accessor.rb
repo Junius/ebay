@@ -3,6 +3,7 @@
 class Class # :nodoc:
   def cattr_reader(*syms)
     syms.each do |sym|
+      next if sym.is_a?(Hash)
       class_eval <<-EOS
         if ! defined? @@#{sym.to_s}
           @@#{sym.to_s} = nil
@@ -30,6 +31,7 @@ class Class # :nodoc:
   
   def cattr_writer(*syms)
     syms.each do |sym|
+      next if sym.is_a?(Hash)
       class_eval <<-EOS
         if ! defined? @@#{sym.to_s}
           @@#{sym.to_s} = nil
