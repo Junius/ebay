@@ -44,15 +44,15 @@ module Ebay #:nodoc:
     XmlNs = 'urn:ebay:apis:eBLBaseComponents'
     
     cattr_accessor :use_sandbox, :sandbox_url, :production_url, :site_id
-    cattr_accessor :runame_sandbox_url, :runame_production_url, :runame
+    cattr_accessor :ru_name_sandbox_url, :ru_name_production_url, :ru_name
     cattr_accessor :dev_id, :app_id, :cert, :auth_token
     cattr_accessor :username, :password
     attr_reader :auth_token, :site_id
     
     self.sandbox_url = 'https://api.sandbox.ebay.com/ws/api.dll'
     self.production_url = 'https://api.ebay.com/ws/api.dll'
-    self.runame_sandbox_url = "https://signin.sandbox.ebay.com/"
-    self.runame_production_url = "https://signin.ebay.com/"
+    self.ru_name_sandbox_url = "https://signin.sandbox.ebay.com/"
+    self.ru_name_production_url = "https://signin.ebay.com/"
     
     self.use_sandbox = false
 
@@ -76,7 +76,7 @@ module Ebay #:nodoc:
     end
     
     def self.ru_url(options = {})
-      use_sandbox ? self.runame_sandbox_url + "ws/eBayISAPI.dll?SignIn&RuName=#{options[:runame] || self.runame}&SessID=#{options[:session_id]}" : self.runame_production_url + "ws/eBayISAPI.dll?SignIn&RuName=#{options[:runame] || self.runame}&SessID=#{options[:session_id]}"
+      use_sandbox ? self.ru_name_sandbox_url + "ws/eBayISAPI.dll?SignIn&RuName=#{options[:ru_name] || self.ru_name}&SessID=#{options[:session_id]}" : self.ru_name_production_url + "ws/eBayISAPI.dll?SignIn&RuName=#{options[:ru_name] || self.ru_name}&SessID=#{options[:session_id]}"
     end
 
     # Simply yields the Ebay::Api class itself.  This makes configuration a bit nicer looking:
