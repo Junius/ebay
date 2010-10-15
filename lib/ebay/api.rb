@@ -12,6 +12,11 @@ module Ebay #:nodoc:
     attr_reader :errors
     def initialize(errors)
       @errors = errors
+      message = @errors.map do |error|
+        error.long_message if error.respond_to?(:long_message)
+      end
+      message = message.join("\n").to_s
+      super(message)
     end
   end
 
