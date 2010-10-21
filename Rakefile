@@ -9,7 +9,7 @@ gem 'activesupport'
 gem 'libxml-ruby'
 require 'xml'
 
-PKG_VERSION = "0.12.1"
+PKG_VERSION = "0.12.2"
 PKG_NAME = "ebayapi"
 PKG_FILE_NAME = "#{PKG_NAME}-#{PKG_VERSION}"
 
@@ -118,7 +118,7 @@ spec = Gem::Specification.new do |s|
   s.email = "codyfauser@gmail.com"
   s.homepage = "http://ebayapi.rubyforge.org"
   s.add_dependency('xml-mapping', '= 0.8.1')
-  s.add_dependency('money', '= 1.7.1')
+  s.add_dependency('money', '= 3.1.5')
 end
 
 Rake::GemPackageTask.new(spec) do |p|
