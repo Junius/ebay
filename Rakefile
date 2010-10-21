@@ -9,8 +9,8 @@ gem 'activesupport'
 gem 'libxml-ruby'
 require 'xml'
 
-PKG_VERSION = "0.12.3"
-PKG_NAME = "ebayapi"
+PKG_VERSION = "0.12.4"
+PKG_NAME = "headshift-ebayapi"
 PKG_FILE_NAME = "#{PKG_NAME}-#{PKG_VERSION}"
 
 PKG_FILES = FileList[
