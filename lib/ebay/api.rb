@@ -77,7 +77,7 @@ module Ebay #:nodoc:
     end
     
     def self.ru_name_url
-      use_sandbox? ? ru_name_sandbox_url : ru_name_production_url
+      using_sandbox? ? ru_name_sandbox_url : ru_name_production_url
     end
 
     def self.ru_url(options = {})
