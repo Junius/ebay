@@ -1223,20 +1223,23 @@ Gem::Specification.new do |s|
      "examples/verify_add_item.rb"
   ]
 
+  money_version = "= 3.1.5"
+  xml_mapping_version = "= 0.8.1"
+ 
   if s.respond_to? :specification_version then
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<xml-mapping>, ["= 0.8.1"])
-      s.add_runtime_dependency(%q<money>, ["= 1.7.1"])
+   if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
+      s.add_runtime_dependency(%q<xml-mapping>, [xml_mapping_version])
+      s.add_runtime_dependency(%q<money>, [money_version])
     else
-      s.add_dependency(%q<xml-mapping>, ["= 0.8.1"])
-      s.add_dependency(%q<money>, ["= 1.7.1"])
+      s.add_dependency(%q<xml-mapping>, [xml_mapping_version])
+      s.add_dependency(%q<money>, [money_version])
     end
   else
-    s.add_dependency(%q<xml-mapping>, ["= 0.8.1"])
-    s.add_dependency(%q<money>, ["= 1.7.1"])
+    s.add_dependency(%q<xml-mapping>, [xml_mapping_version])
+    s.add_dependency(%q<money>, [money_version])
   end
 end
 
